@@ -1,0 +1,22 @@
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana
+    environment: 
+      - GF_SERVER_ROOT_URL=http://192.168.99.100:3000
+      - GF_SECURITY_ADMIN_PASSWORD=123456
+      - TZ="America/Bahia"
+    ports:
+      - 3000:3000
+    user: "104"
+    networks:
+      - servnet
+  prometheus: 
+     image: prom/alertmanager
+     ports:
+      - 9093:9093
+     networks:
+      - prometheusnet
+  networks:
+    prometheusnet:
+      driver: bridge
