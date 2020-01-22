@@ -1,4 +1,4 @@
 FROM java:8
 EXPOSE 8080
-ADD /target/observability-0.0.1-SNAPSHOT.jar observability-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","observability-0.0.1-SNAPSHOT.jar"]
+ADD observability-1.jar observability-1.jar
+ENTRYPOINT ["java","-jar","observability-1.jar"]
