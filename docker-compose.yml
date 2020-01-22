@@ -8,9 +8,11 @@ services:
       - TZ="America/Bahia"
     ports:
       - 3000:3000
-    user: "104"
+    user: "1001"
     networks:
       - gateway
+    volumes:
+      - "./grafana/:/var/lib/grafana"
   prometheus:
     image: prom/prometheus
     ports:
